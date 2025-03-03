@@ -20,6 +20,6 @@ jobs:
           cd ${{ github.workspace }}
           echo "Action desplegant a produccio" > ./web/last_deploy.txt
           date >> ./web/last_deploy.txt
-          scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/prod_key.pem ./web/* ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }}:/web/a23arapacmun.daw.inspedralbes.cat/ghactions-AraceliPac.daw.inspedralbes.cat/public_html/tr0-2024-2025-un-munt-de-preguntes-AraceliPac
+          scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/prod_key.pem ./web/* ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }}:/home/a23arapacmun/web/a23arapacmun.daw.inspedralbes.cat/public_html
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
