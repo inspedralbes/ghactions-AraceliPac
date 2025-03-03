@@ -1,20 +1,10 @@
-name: Preparant per producció
-run-name: ${{ github.actor }} està pujant l'aplicació a PROD  🚀
+name: SSH Connection Test
+
 on: [push]
+
 jobs:
-  Pujar-a-produccio-amb-SCP:
+  ssh-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Obtenint el codi del respositori
-        uses: actions/checkout@v4
-
-      - name: scp a produccio
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/prod_key.pem
-          chmod 600 ~/prod_key.pem
-          cd ${{ github.workspace }}
-          echo "Action desplegant a produccio" > ./web/last_deploy.txt
-          date >> ./web/last_deploy.txt
-          scp -r -o stricthostkeychecking=no -o UserKnownHostsFile=/dev/null -i "~/prod_key.pem" ./web/* ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }}:/home/ebota/a23arapacmun.daw.inspedralbes.cat/ghactions-AraceliPac.daw.inspedralbes.cat/public_html/tr0-2024-2025-un-munt-de-preguntes-AraceliPac
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Provar connexió SSH
+        run: ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }} "echo 'Connexió exitosa!'"
