@@ -12,7 +12,7 @@ jobs:
       - name: Configura Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Utilitza la versió de Node.js que necessitis
+          node-version: 22 # Utilitza la versió de Node.js que necessitis
 
       - name: ubicacio
         run: pwd # O bé npm install si no tens un package-lock.json
