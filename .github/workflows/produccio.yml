@@ -15,7 +15,7 @@ jobs:
           node-version: 22  # Utilitza la versió de Node.js que necessitis
 
       - name: Accedir a la carpeta del projecte Vue.js
-        run: cd /home/runner/work/ghactions-AraceliPac/ghactions-AraceliPac/my-project
+        run: cd /home/runner/work/ghactions-AraceliPac/my-project
 
       - name: ubicacio
         run: pwd  # O bé npm install si no tens un package-lock.json
