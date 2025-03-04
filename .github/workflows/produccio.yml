@@ -17,6 +17,8 @@ jobs:
       - name: Accedir a la carpeta del projecte Vue.js
         run: cd my-project
 
+      - name: ubicacio
+        run: pwd  # O bé npm install si no tens un package-lock.json
       - name: Instal·lar dependències
         run: npm ci  # O bé npm install si no tens un package-lock.json
 
