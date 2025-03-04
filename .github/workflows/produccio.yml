@@ -12,12 +12,12 @@ jobs:
       - name: Configura Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22 # Utilitza la versió de Node.js que necessitis
+          node-version: 22 
 
       - name: ubicacio
-        run: pwd # O bé npm install si no tens un package-lock.json
+        run: pwd
       - name: Instal·lar dependències
-        run: npm ci # O bé npm install si no tens un package-lock.json
+        run: npm ci 
 
       - name: Construir l'aplicació Vue.js
         run: npm run build # Això generarà la carpeta dist
