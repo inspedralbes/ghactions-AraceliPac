@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Calculadora</h1>
+      <h1>Mi Calculadora</h1>
       <div class="keyboard">
         <button v-for="number in numbers" :key="number" @click="handleClick(number)">
           {{ number }}
