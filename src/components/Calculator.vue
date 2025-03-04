@@ -1,6 +1,7 @@
 <template>
     <div>
-      <h1>La Meva Calculadora</h1>
+      <h1>ARACELI</h1>
+      <h1>Calculadora</h1>
       <div class="keyboard">
         <button v-for="number in numbers" :key="number" @click="handleClick(number)">
           {{ number }}
