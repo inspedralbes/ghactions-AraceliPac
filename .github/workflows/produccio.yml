@@ -12,7 +12,7 @@ jobs:
       - name: Configura Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Utilitza la versió de Node.js que necessitis
+          node-version: 22  # Utilitza la versió de Node.js que necessitis
 
       - name: Accedir a la carpeta del projecte Vue.js
         run: cd my-project
@@ -31,6 +31,6 @@ jobs:
 
       - name: Pujar carpeta dist a producció
         run: |
-          scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/prod_key.pem ./my-project/dist/* ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }}:/home/a23arapacmun/web/a23arapacmun.daw.inspedralbes.cat/public_html/tr0-2024-2025-un-munt-de-preguntes-AraceliPac/ghactions
+          scp -r -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/prod_key.pem ./my-project/dist/* ${{ secrets.PROD_USER }}@${{ secrets.SERVER_IP }}:/home/a23arapacmun/web/a23arapacmun.daw.inspedralbes.cat/public_html/tr0-2024-2025-un-munt-de-preguntes-AraceliPac/ghactions/calculadora
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
